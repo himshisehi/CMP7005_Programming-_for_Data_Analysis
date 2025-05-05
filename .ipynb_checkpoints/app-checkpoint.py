@@ -1,172 +1,149 @@
-{
- "cells": [
-  {
-   "cell_type": "code",
-   "execution_count": 2,
-   "id": "43512e3d-709c-47ca-b354-468b0bd03821",
-   "metadata": {},
-   "outputs": [
-    {
-     "name": "stderr",
-     "output_type": "stream",
-     "text": [
-      "2025-05-03 15:47:47.570 No runtime found, using MemoryCacheStorageManager\n",
-      "2025-05-03 15:47:47.572 No runtime found, using MemoryCacheStorageManager\n",
-      "2025-05-03 15:47:47.574 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n",
-      "2025-05-03 15:47:47.575 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n",
-      "2025-05-03 15:47:47.576 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n",
-      "2025-05-03 15:47:47.915 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n",
-      "2025-05-03 15:47:47.917 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n"
-     ]
-    },
-    {
-     "ename": "KeyError",
-     "evalue": "'DateTime'",
-     "output_type": "error",
-     "traceback": [
-      "\u001b[31m---------------------------------------------------------------------------\u001b[39m",
-      "\u001b[31mKeyError\u001b[39m                                  Traceback (most recent call last)",
-      "\u001b[36mFile \u001b[39m\u001b[32m~\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\pandas\\core\\indexes\\base.py:3805\u001b[39m, in \u001b[36mIndex.get_loc\u001b[39m\u001b[34m(self, key)\u001b[39m\n\u001b[32m   3804\u001b[39m \u001b[38;5;28;01mtry\u001b[39;00m:\n\u001b[32m-> \u001b[39m\u001b[32m3805\u001b[39m     \u001b[38;5;28;01mreturn\u001b[39;00m \u001b[38;5;28;43mself\u001b[39;49m\u001b[43m.\u001b[49m\u001b[43m_engine\u001b[49m\u001b[43m.\u001b[49m\u001b[43mget_loc\u001b[49m\u001b[43m(\u001b[49m\u001b[43mcasted_key\u001b[49m\u001b[43m)\u001b[49m\n\u001b[32m   3806\u001b[39m \u001b[38;5;28;01mexcept\u001b[39;00m \u001b[38;5;167;01mKeyError\u001b[39;00m \u001b[38;5;28;01mas\u001b[39;00m err:\n",
-      "\u001b[36mFile \u001b[39m\u001b[32mindex.pyx:167\u001b[39m, in \u001b[36mpandas._libs.index.IndexEngine.get_loc\u001b[39m\u001b[34m()\u001b[39m\n",
-      "\u001b[36mFile \u001b[39m\u001b[32mindex.pyx:196\u001b[39m, in \u001b[36mpandas._libs.index.IndexEngine.get_loc\u001b[39m\u001b[34m()\u001b[39m\n",
-      "\u001b[36mFile \u001b[39m\u001b[32mpandas\\\\_libs\\\\hashtable_class_helper.pxi:7081\u001b[39m, in \u001b[36mpandas._libs.hashtable.PyObjectHashTable.get_item\u001b[39m\u001b[34m()\u001b[39m\n",
-      "\u001b[36mFile \u001b[39m\u001b[32mpandas\\\\_libs\\\\hashtable_class_helper.pxi:7089\u001b[39m, in \u001b[36mpandas._libs.hashtable.PyObjectHashTable.get_item\u001b[39m\u001b[34m()\u001b[39m\n",
-      "\u001b[31mKeyError\u001b[39m: 'DateTime'",
-      "\nThe above exception was the direct cause of the following exception:\n",
-      "\u001b[31mKeyError\u001b[39m                                  Traceback (most recent call last)",
-      "\u001b[36mCell\u001b[39m\u001b[36m \u001b[39m\u001b[32mIn[2]\u001b[39m\u001b[32m, line 17\u001b[39m\n\u001b[32m     14\u001b[39m     df[\u001b[33m'\u001b[39m\u001b[33mDateTime\u001b[39m\u001b[33m'\u001b[39m] = pd.to_datetime(df[\u001b[33m'\u001b[39m\u001b[33mDateTime\u001b[39m\u001b[33m'\u001b[39m])\n\u001b[32m     15\u001b[39m     \u001b[38;5;28;01mreturn\u001b[39;00m df\n\u001b[32m---> \u001b[39m\u001b[32m17\u001b[39m final_air_quality = \u001b[43mload_data\u001b[49m\u001b[43m(\u001b[49m\u001b[43m)\u001b[49m\n\u001b[32m     19\u001b[39m \u001b[38;5;66;03m# Sidebar menu\u001b[39;00m\n\u001b[32m     20\u001b[39m st.sidebar.title(\u001b[33m\"\u001b[39m\u001b[33mAir Quality Analysis App\u001b[39m\u001b[33m\"\u001b[39m)\n",
-      "\u001b[36mFile \u001b[39m\u001b[32m~\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\streamlit\\runtime\\caching\\cache_utils.py:219\u001b[39m, in \u001b[36mCachedFunc.__call__\u001b[39m\u001b[34m(self, *args, **kwargs)\u001b[39m\n\u001b[32m    216\u001b[39m     \u001b[38;5;28;01melse\u001b[39;00m:\n\u001b[32m    217\u001b[39m         spinner_message = \u001b[33mf\u001b[39m\u001b[33m\"\u001b[39m\u001b[33mRunning `\u001b[39m\u001b[38;5;132;01m{\u001b[39;00mname\u001b[38;5;132;01m}\u001b[39;00m\u001b[33m(...)`.\u001b[39m\u001b[33m\"\u001b[39m\n\u001b[32m--> \u001b[39m\u001b[32m219\u001b[39m \u001b[38;5;28;01mreturn\u001b[39;00m \u001b[38;5;28;43mself\u001b[39;49m\u001b[43m.\u001b[49m\u001b[43m_get_or_create_cached_value\u001b[49m\u001b[43m(\u001b[49m\u001b[43margs\u001b[49m\u001b[43m,\u001b[49m\u001b[43m \u001b[49m\u001b[43mkwargs\u001b[49m\u001b[43m,\u001b[49m\u001b[43m \u001b[49m\u001b[43mspinner_message\u001b[49m\u001b[43m)\u001b[49m\n",
-      "\u001b[36mFile \u001b[39m\u001b[32m~\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\streamlit\\runtime\\caching\\cache_utils.py:261\u001b[39m, in \u001b[36mCachedFunc._get_or_create_cached_value\u001b[39m\u001b[34m(self, func_args, func_kwargs, spinner_message)\u001b[39m\n\u001b[32m    255\u001b[39m spinner_or_no_context = (\n\u001b[32m    256\u001b[39m     spinner(spinner_message, _cache=\u001b[38;5;28;01mTrue\u001b[39;00m)\n\u001b[32m    257\u001b[39m     \u001b[38;5;28;01mif\u001b[39;00m spinner_message \u001b[38;5;129;01mis\u001b[39;00m \u001b[38;5;129;01mnot\u001b[39;00m \u001b[38;5;28;01mNone\u001b[39;00m \u001b[38;5;129;01mand\u001b[39;00m \u001b[38;5;129;01mnot\u001b[39;00m is_nested_cache_function\n\u001b[32m    258\u001b[39m     \u001b[38;5;28;01melse\u001b[39;00m contextlib.nullcontext()\n\u001b[32m    259\u001b[39m )\n\u001b[32m    260\u001b[39m \u001b[38;5;28;01mwith\u001b[39;00m spinner_or_no_context:\n\u001b[32m--> \u001b[39m\u001b[32m261\u001b[39m     \u001b[38;5;28;01mreturn\u001b[39;00m \u001b[38;5;28;43mself\u001b[39;49m\u001b[43m.\u001b[49m\u001b[43m_handle_cache_miss\u001b[49m\u001b[43m(\u001b[49m\u001b[43mcache\u001b[49m\u001b[43m,\u001b[49m\u001b[43m \u001b[49m\u001b[43mvalue_key\u001b[49m\u001b[43m,\u001b[49m\u001b[43m \u001b[49m\u001b[43mfunc_args\u001b[49m\u001b[43m,\u001b[49m\u001b[43m \u001b[49m\u001b[43mfunc_kwargs\u001b[49m\u001b[43m)\u001b[49m\n",
-      "\u001b[36mFile \u001b[39m\u001b[32m~\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\streamlit\\runtime\\caching\\cache_utils.py:320\u001b[39m, in \u001b[36mCachedFunc._handle_cache_miss\u001b[39m\u001b[34m(self, cache, value_key, func_args, func_kwargs)\u001b[39m\n\u001b[32m    316\u001b[39m \u001b[38;5;66;03m# We acquired the lock before any other thread. Compute the value!\u001b[39;00m\n\u001b[32m    317\u001b[39m \u001b[38;5;28;01mwith\u001b[39;00m \u001b[38;5;28mself\u001b[39m._info.cached_message_replay_ctx.calling_cached_function(\n\u001b[32m    318\u001b[39m     \u001b[38;5;28mself\u001b[39m._info.func\n\u001b[32m    319\u001b[39m ):\n\u001b[32m--> \u001b[39m\u001b[32m320\u001b[39m     computed_value = \u001b[38;5;28;43mself\u001b[39;49m\u001b[43m.\u001b[49m\u001b[43m_info\u001b[49m\u001b[43m.\u001b[49m\u001b[43mfunc\u001b[49m\u001b[43m(\u001b[49m\u001b[43m*\u001b[49m\u001b[43mfunc_args\u001b[49m\u001b[43m,\u001b[49m\u001b[43m \u001b[49m\u001b[43m*\u001b[49m\u001b[43m*\u001b[49m\u001b[43mfunc_kwargs\u001b[49m\u001b[43m)\u001b[49m\n\u001b[32m    322\u001b[39m \u001b[38;5;66;03m# We've computed our value, and now we need to write it back to the cache\u001b[39;00m\n\u001b[32m    323\u001b[39m \u001b[38;5;66;03m# along with any \"replay messages\" that were generated during value computation.\u001b[39;00m\n\u001b[32m    324\u001b[39m messages = \u001b[38;5;28mself\u001b[39m._info.cached_message_replay_ctx._most_recent_messages\n",
-      "\u001b[36mCell\u001b[39m\u001b[36m \u001b[39m\u001b[32mIn[2]\u001b[39m\u001b[32m, line 14\u001b[39m, in \u001b[36mload_data\u001b[39m\u001b[34m()\u001b[39m\n\u001b[32m     11\u001b[39m \u001b[38;5;129m@st\u001b[39m.cache_data\n\u001b[32m     12\u001b[39m \u001b[38;5;28;01mdef\u001b[39;00m\u001b[38;5;250m \u001b[39m\u001b[34mload_data\u001b[39m():\n\u001b[32m     13\u001b[39m     df = pd.read_csv(\u001b[33m\"\u001b[39m\u001b[33mfinal_air_quality.csv\u001b[39m\u001b[33m\"\u001b[39m)  \u001b[38;5;66;03m# Change this to your actual file name\u001b[39;00m\n\u001b[32m---> \u001b[39m\u001b[32m14\u001b[39m     df[\u001b[33m'\u001b[39m\u001b[33mDateTime\u001b[39m\u001b[33m'\u001b[39m] = pd.to_datetime(\u001b[43mdf\u001b[49m\u001b[43m[\u001b[49m\u001b[33;43m'\u001b[39;49m\u001b[33;43mDateTime\u001b[39;49m\u001b[33;43m'\u001b[39;49m\u001b[43m]\u001b[49m)\n\u001b[32m     15\u001b[39m     \u001b[38;5;28;01mreturn\u001b[39;00m df\n",
-      "\u001b[36mFile \u001b[39m\u001b[32m~\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\pandas\\core\\frame.py:4102\u001b[39m, in \u001b[36mDataFrame.__getitem__\u001b[39m\u001b[34m(self, key)\u001b[39m\n\u001b[32m   4100\u001b[39m \u001b[38;5;28;01mif\u001b[39;00m \u001b[38;5;28mself\u001b[39m.columns.nlevels > \u001b[32m1\u001b[39m:\n\u001b[32m   4101\u001b[39m     \u001b[38;5;28;01mreturn\u001b[39;00m \u001b[38;5;28mself\u001b[39m._getitem_multilevel(key)\n\u001b[32m-> \u001b[39m\u001b[32m4102\u001b[39m indexer = \u001b[38;5;28;43mself\u001b[39;49m\u001b[43m.\u001b[49m\u001b[43mcolumns\u001b[49m\u001b[43m.\u001b[49m\u001b[43mget_loc\u001b[49m\u001b[43m(\u001b[49m\u001b[43mkey\u001b[49m\u001b[43m)\u001b[49m\n\u001b[32m   4103\u001b[39m \u001b[38;5;28;01mif\u001b[39;00m is_integer(indexer):\n\u001b[32m   4104\u001b[39m     indexer = [indexer]\n",
-      "\u001b[36mFile \u001b[39m\u001b[32m~\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\pandas\\core\\indexes\\base.py:3812\u001b[39m, in \u001b[36mIndex.get_loc\u001b[39m\u001b[34m(self, key)\u001b[39m\n\u001b[32m   3807\u001b[39m     \u001b[38;5;28;01mif\u001b[39;00m \u001b[38;5;28misinstance\u001b[39m(casted_key, \u001b[38;5;28mslice\u001b[39m) \u001b[38;5;129;01mor\u001b[39;00m (\n\u001b[32m   3808\u001b[39m         \u001b[38;5;28misinstance\u001b[39m(casted_key, abc.Iterable)\n\u001b[32m   3809\u001b[39m         \u001b[38;5;129;01mand\u001b[39;00m \u001b[38;5;28many\u001b[39m(\u001b[38;5;28misinstance\u001b[39m(x, \u001b[38;5;28mslice\u001b[39m) \u001b[38;5;28;01mfor\u001b[39;00m x \u001b[38;5;129;01min\u001b[39;00m casted_key)\n\u001b[32m   3810\u001b[39m     ):\n\u001b[32m   3811\u001b[39m         \u001b[38;5;28;01mraise\u001b[39;00m InvalidIndexError(key)\n\u001b[32m-> \u001b[39m\u001b[32m3812\u001b[39m     \u001b[38;5;28;01mraise\u001b[39;00m \u001b[38;5;167;01mKeyError\u001b[39;00m(key) \u001b[38;5;28;01mfrom\u001b[39;00m\u001b[38;5;250m \u001b[39m\u001b[34;01merr\u001b[39;00m\n\u001b[32m   3813\u001b[39m \u001b[38;5;28;01mexcept\u001b[39;00m \u001b[38;5;167;01mTypeError\u001b[39;00m:\n\u001b[32m   3814\u001b[39m     \u001b[38;5;66;03m# If we have a listlike key, _check_indexing_error will raise\u001b[39;00m\n\u001b[32m   3815\u001b[39m     \u001b[38;5;66;03m#  InvalidIndexError. Otherwise we fall through and re-raise\u001b[39;00m\n\u001b[32m   3816\u001b[39m     \u001b[38;5;66;03m#  the TypeError.\u001b[39;00m\n\u001b[32m   3817\u001b[39m     \u001b[38;5;28mself\u001b[39m._check_indexing_error(key)\n",
-      "\u001b[31mKeyError\u001b[39m: 'DateTime'"
-     ]
-    }
-   ],
-   "source": [
-    "import streamlit as st\n",
-    "import pandas as pd\n",
-    "import matplotlib.pyplot as plt\n",
-    "import seaborn as sns\n",
-    "from sklearn.ensemble import RandomForestRegressor\n",
-    "from sklearn.model_selection import train_test_split\n",
-    "from sklearn.metrics import mean_squared_error, r2_score\n",
-    "import numpy as np\n",
-    "\n",
-    "# Load dataset\n",
-    "@st.cache_data\n",
-    "def load_data():\n",
-    "    df = pd.read_csv(\"final_air_quality.csv\")  # Change this to your actual file name\n",
-    "    df['Datetime'] = pd.to_datetime(df['Datetime'])\n",
-    "    return df\n",
-    "\n",
-    "final_air_quality = load_data()\n",
-    "\n",
-    "# Sidebar menu\n",
-    "st.sidebar.title(\"Air Quality Analysis App\")\n",
-    "page = st.sidebar.radio(\"Select a Page\", [\"Data Overview\", \"Exploratory Data Analysis (EDA)\", \"Modeling and Prediction\"])\n",
-    "\n",
-    "# 1. Data Overview\n",
-    "if page == \"Data Overview\":\n",
-    "    st.title(\"📊 Data Overview\")\n",
-    "    st.write(\"### First few rows of the dataset:\")\n",
-    "    st.write(final_air_quality.head())\n",
-    "\n",
-    "    st.write(\"### Dataset Info:\")\n",
-    "    st.write(f\"Shape: {final_air_quality.shape}\")\n",
-    "    st.write(\"Column Types:\")\n",
-    "    st.write(final_air_quality.dtypes)\n",
-    "\n",
-    "    st.write(\"### Missing Values:\")\n",
-    "    st.write(final_air_quality.isnull().sum())\n",
-    "\n",
-    "# 2. EDA\n",
-    "elif page == \"Exploratory Data Analysis (EDA)\":\n",
-    "    st.title(\"📈 Exploratory Data Analysis\")\n",
-    "\n",
-    "    st.write(\"#### PM2.5 Distribution Histogram\")\n",
-    "    fig, ax = plt.subplots()\n",
-    "    final_air_quality['PM2.5'].hist(bins=30, ax=ax, color='skyblue')\n",
-    "    st.pyplot(fig)\n",
-    "\n",
-    "    st.write(\"#### Boxplot by Category\")\n",
-    "    fig2, ax2 = plt.subplots()\n",
-    "    sns.boxplot(data=final_air_quality, x='category', y='PM2.5', ax=ax2)\n",
-    "    st.pyplot(fig2)\n",
-    "\n",
-    "    st.write(\"#### Heatmap of Correlation Matrix\")\n",
-    "    corr = final_air_quality.select_dtypes(include=[np.number]).corr()\n",
-    "    fig3, ax3 = plt.subplots(figsize=(10, 6))\n",
-    "    sns.heatmap(corr, annot=True, fmt=\".2f\", cmap=\"coolwarm\", ax=ax3)\n",
-    "    st.pyplot(fig3)\n",
-    "\n",
-    "# 3. Modeling and Prediction\n",
-    "elif page == \"Modeling and Prediction\":\n",
-    "    st.title(\"🤖 Modeling and Prediction\")\n",
-    "\n",
-    "    st.write(\"### Using Random Forest to Predict PM2.5\")\n",
-    "\n",
-    "    # Feature selection\n",
-    "    features = ['PM10', 'SO2', 'NO2', 'CO', 'O3', 'Temp', 'Wspd', 'Rain', 'Dewp', 'Pre']\n",
-    "    target = 'PM2.5'\n",
-    "\n",
-    "    # Drop NA for modeling\n",
-    "    model_df =final_air_quality[features + [target]].dropna()\n",
-    "\n",
-    "    X = model_df[features]\n",
-    "    y = model_df[target]\n",
-    "\n",
-    "    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)\n",
-    "\n",
-    "    rf_model = RandomForestRegressor(n_estimators=100, random_state=42)\n",
-    "    rf_model.fit(X_train, y_train)\n",
-    "    y_pred = rf_model.predict(X_test)\n",
-    "\n",
-    "    rmse = np.sqrt(mean_squared_error(y_test, y_pred))\n",
-    "    r2 = r2_score(y_test, y_pred)\n",
-    "    mse = mean_squared_error(y_test, y_pred)\n",
-    "\n",
-    "    st.write(f\"**Root Mean Squared Error (RMSE):** {rmse:.2f}\")\n",
-    "    st.write(f\"**Mean Squared Error (MSE):** {mse:.2f}\")\n",
-    "    st.write(f\"**R² Score:** {r2:.2f}\")\n",
-    "\n",
-    "    st.write(\"### Feature Importance\")\n",
-    "    importance = pd.Series(rf_model.feature_importances_, index=features).sort_values(ascending=False)\n",
-    "    fig4, ax4 = plt.subplots()\n",
-    "    sns.barplot(x=importance, y=importance.index, palette=\"viridis\", ax=ax4)\n",
-    "    st.pyplot(fig4)\n"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": null,
-   "id": "d396feee-c24d-4cee-b3ae-933ad7a3769c",
-   "metadata": {},
-   "outputs": [],
-   "source": []
-  }
- ],
- "metadata": {
-  "kernelspec": {
-   "display_name": "Python 3 (ipykernel)",
-   "language": "python",
-   "name": "python3"
-  },
-  "language_info": {
-   "codemirror_mode": {
-    "name": "ipython",
-    "version": 3
-   },
-   "file_extension": ".py",
-   "mimetype": "text/x-python",
-   "name": "python",
-   "nbconvert_exporter": "python",
-   "pygments_lexer": "ipython3",
-   "version": "3.11.9"
-  }
- },
- "nbformat": 4,
- "nbformat_minor": 5
-}
+import streamlit as st
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.metrics import mean_squared_error, r2_score
+import numpy as np
+import missingno as msno
+
+# Set up layout
+st.set_page_config(page_title="Air Quality App", layout="wide")
+#df = air_quality_df.copy() 
+
+# Load dataset
+@st.cache_data
+def load_data():
+    return pd.read_csv("final_air_quality.csv")
+    
+air_quality_df = load_data()
+df = air_quality_df.copy()
+
+# Sidebar navigation
+page = st.sidebar.radio("Navigation", ["Home", "Exploratory Data Analysis", "Modeling and Prediction"])
+
+# ----------------------------------------
+# Home Page
+# ----------------------------------------
+if page == "Home":
+    st.title("Air Quality Monitoring Dashboard")
+    st.markdown("Welcome to the **Air Quality Analysis App**")
+    st.markdown("This Streamlit-based web application provides a comprehensive analysis of air quality data helping users to explore pollution trends")
+
+    st.markdown("- Explore China air pollution data (Urban, Suburban, Rural, Industrial)")
+    st.markdown("- Understand pollutant trends over time")
+    st.markdown("- Build predictive models using machine learning")
+
+    st.metric("Total Records", len(air_quality_df))
+    st.metric("Monitoring Sites", air_quality_df['station'].nunique())
+ 
+    st.markdown("**Urban Site : Wanshouxigong**")
+    st.markdown(" Located in central Beijing, this site represents typical urban air quality.Surrounded by dense traffic and residential/commercial zones")
+
+    st.markdown("**Suburban Site : Changping**")
+    st.markdown(" Located in the northern outskirts of Beijing. Considered a suburban area, less dense than the city center but still developed")
+
+    st.markdown("**Rural Site : Huairou**")
+    st.markdown(" Situated in the northern rural region of Beijing. Characterized by lower population density and more natural surroundings")
+    
+    st.markdown("**Industrial Site : Aotizhongxin**")
+    st.markdown(" Known as a hotspot due to its proximity to Olympic venues and high development zones. This site is often monitored closely")
+
+# ----------------------------------------
+# EDA Page
+# ----------------------------------------
+elif page == "Exploratory Data Analysis":
+    st.title(" Exploratory Data Analysis")
+
+    st.subheader("📌 Dataset Description")
+    st.write(df.describe())
+
+    st.subheader("📌 Missing Values")
+    st.write(df.isnull().sum())
+
+    st.subheader("📌 Boxplot: PM2.5 by Day of Week")
+    fig, ax = plt.subplots()
+    sns.boxplot(x='DayOfWeek', y='PM2.5', data=df, ax=ax)
+    st.pyplot(fig)
+        
+    st.subheader("📌 Missing Data in a Heatmap")
+    fig, ax = plt.subplots(figsize=(12, 6))
+    msno.matrix(df, ax=ax)
+    st.pyplot(fig)
+
+    st.subheader("📌 Distribution of Pollutants in a Bar Chart")
+    pollutants = ['PM2.5', 'PM10', 'SO2', 'NO2', 'CO', 'O3']
+    fig, axs = plt.subplots(2, 3, figsize=(16, 10))
+    axs = axs.flatten()
+
+    for i, pollutant in enumerate(pollutants):
+        sns.histplot(df[pollutant], kde=True, bins=30, ax=axs[i])
+        axs[i].set_title(f'Distribution of {pollutant}')
+        axs[i].set_xlabel(pollutant)
+        axs[i].set_ylabel('Frequency')
+    plt.tight_layout()
+    st.pyplot(fig)
+
+    st.subheader("Record Count by Time of Day")
+    plt.figure(figsize=(8, 5))
+    sns.countplot(x='TimeOfDay', data=air_quality_df, order=['Morning', 'Afternoon', 'Evening', 'Night'])
+    plt.title('Record Count by Time of Day')
+    plt.xlabel('Time of Day')
+    plt.ylabel('Count')
+    st.pyplot(plt)
+
+    st.subheader("Record Count: Weekends vs Weekdays")
+    plt.figure(figsize=(6, 4))
+    sns.countplot(x='Weekend', data=air_quality_df, palette='viridis')
+    plt.title('Record Count by Weekend Indicator')
+    plt.xlabel('Weekend (0 = Weekday, 1 = Weekend)')
+    plt.ylabel('Count')
+    st.pyplot(plt)
+
+    st.subheader("Correlation Between PM2.5 and PM10 Levels")
+    fig, ax = plt.subplots(figsize=(10, 6))
+    sns.scatterplot(x='PM2.5', y='PM10', data=air_quality_df, ax=ax)
+    ax.set_xlabel('PM2.5')
+    ax.set_ylabel('PM10')
+    st.pyplot(fig)
+    st.markdown("""This scatter plot helps explore how concentrations of fine particles (PM2.5) relate to those of larger particles (PM10). Understanding this correlation can provide insights into pollution sources and help identify trends in air quality measurements.""")
+
+    st.subheader("Relationship Between PM2.5 and NO2 by Air Quality Across Different Areas")
+    fig, ax = plt.subplots(figsize=(10, 6))
+    sns.scatterplot(x='PM2.5', y='NO2', data=air_quality_df, hue='Category', palette='Set2', ax=ax)
+    ax.set_xlabel('PM2.5')
+    ax.set_ylabel('NO2')
+    st.pyplot(fig)
+    st.markdown("""This scatter plot shows the relationship between **PM2.5** and **NO2** levels, color-coded by station category (Urban, Suburban,Industrial, etc.).Different categories may show varying correlations, providing insights into how traffic, industry, or rural conditions impact pollution patterns.""")
+
+
+# ----------------------------------------
+# Modeling Page
+# ----------------------------------------
+elif page == "Modeling and Prediction":
+    st.title("🤖 Modeling and Prediction")
+
+    df = df.dropna()
+    features = ['Temp', 'Dewp', 'Wspd', 'Rain', 'NO2', 'SO2', 'CO', 'O3']
+    target = 'PM2.5'
+
+    X = df[features]
+    y = df[target]
+
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42) 
+
+    model = RandomForestRegressor(n_estimators=100, random_state=42)
+    model.fit(X_train, y_train)
+    y_pred = model.predict(X_test)
+
+    rmse = np.sqrt(mean_squared_error(y_test, y_pred))
+    r2 = r2_score(y_test, y_pred)
+
+    st.subheader("📈 Model Performance")
+    st.write(f"**Root Mean Squared Error (RMSE):** {rmse:.2f}")
+    st.write(f"**R² Score:** {r2:.2f}")
+
+    st.subheader("📌 Feature Importances")
+    feature_importances = pd.Series(model.feature_importances_, index=features).sort_values(ascending=False)
+    st.bar_chart(feature_importances)

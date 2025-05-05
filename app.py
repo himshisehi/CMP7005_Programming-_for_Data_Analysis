@@ -1,205 +1,149 @@
-{
- "cells": [
-  {
-   "cell_type": "code",
-   "execution_count": 3,
-   "id": "43512e3d-709c-47ca-b354-468b0bd03821",
-   "metadata": {},
-   "outputs": [
-    {
-     "name": "stderr",
-     "output_type": "stream",
-     "text": [
-      "2025-05-03 15:48:46.994 No runtime found, using MemoryCacheStorageManager\n",
-      "2025-05-03 15:48:46.995 No runtime found, using MemoryCacheStorageManager\n",
-      "2025-05-03 15:48:46.997 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n",
-      "2025-05-03 15:48:46.997 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n",
-      "2025-05-03 15:48:46.999 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n",
-      "2025-05-03 15:48:47.484 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n",
-      "2025-05-03 15:48:47.484 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n",
-      "2025-05-03 15:48:47.484 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n",
-      "2025-05-03 15:48:47.484 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n",
-      "2025-05-03 15:48:47.488 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n",
-      "2025-05-03 15:48:47.489 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n",
-      "2025-05-03 15:48:47.489 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n",
-      "2025-05-03 15:48:47.490 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n",
-      "2025-05-03 15:48:47.491 Session state does not function when running a script without `streamlit run`\n",
-      "2025-05-03 15:48:47.493 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n",
-      "2025-05-03 15:48:47.494 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n",
-      "2025-05-03 15:48:47.496 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n",
-      "2025-05-03 15:48:47.496 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n",
-      "2025-05-03 15:48:47.496 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n",
-      "2025-05-03 15:48:47.496 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n",
-      "2025-05-03 15:48:47.499 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n",
-      "2025-05-03 15:48:47.500 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n",
-      "2025-05-03 15:48:47.546 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n",
-      "2025-05-03 15:48:47.546 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n",
-      "2025-05-03 15:48:47.546 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n",
-      "2025-05-03 15:48:47.546 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n",
-      "2025-05-03 15:48:47.557 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n",
-      "2025-05-03 15:48:47.557 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n",
-      "2025-05-03 15:48:47.558 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n",
-      "2025-05-03 15:48:47.559 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n",
-      "2025-05-03 15:48:47.560 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n",
-      "2025-05-03 15:48:47.561 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n",
-      "2025-05-03 15:48:47.562 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n",
-      "2025-05-03 15:48:47.562 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n",
-      "2025-05-03 15:48:47.564 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n",
-      "2025-05-03 15:48:47.564 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n",
-      "2025-05-03 15:48:47.567 Serialization of dataframe to Arrow table was unsuccessful. Applying automatic fixes for column types to make the dataframe Arrow-compatible.\n",
-      "Traceback (most recent call last):\n",
-      "  File \"C:\\Users\\ASUS\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\streamlit\\dataframe_util.py\", line 822, in convert_pandas_df_to_arrow_bytes\n",
-      "    table = pa.Table.from_pandas(df)\n",
-      "            ^^^^^^^^^^^^^^^^^^^^^^^^\n",
-      "  File \"pyarrow\\\\table.pxi\", line 4751, in pyarrow.lib.Table.from_pandas\n",
-      "  File \"C:\\Users\\ASUS\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\pyarrow\\pandas_compat.py\", line 639, in dataframe_to_arrays\n",
-      "    arrays = [convert_column(c, f)\n",
-      "             ^^^^^^^^^^^^^^^^^^^^^\n",
-      "  File \"C:\\Users\\ASUS\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\pyarrow\\pandas_compat.py\", line 639, in <listcomp>\n",
-      "    arrays = [convert_column(c, f)\n",
-      "              ^^^^^^^^^^^^^^^^^^^^\n",
-      "  File \"C:\\Users\\ASUS\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\pyarrow\\pandas_compat.py\", line 626, in convert_column\n",
-      "    raise e\n",
-      "  File \"C:\\Users\\ASUS\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\pyarrow\\pandas_compat.py\", line 620, in convert_column\n",
-      "    result = pa.array(col, type=type_, from_pandas=True, safe=safe)\n",
-      "             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
-      "  File \"pyarrow\\\\array.pxi\", line 362, in pyarrow.lib.array\n",
-      "  File \"pyarrow\\\\array.pxi\", line 87, in pyarrow.lib._ndarray_to_array\n",
-      "  File \"pyarrow\\\\error.pxi\", line 92, in pyarrow.lib.check_status\n",
-      "pyarrow.lib.ArrowInvalid: (\"Could not convert dtype('<M8[ns]') with type numpy.dtypes.DateTime64DType: did not recognize Python value type when inferring an Arrow data type\", 'Conversion failed for column 0 with type object')\n",
-      "2025-05-03 15:48:47.631 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n",
-      "2025-05-03 15:48:47.632 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n",
-      "2025-05-03 15:48:47.632 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n",
-      "2025-05-03 15:48:47.633 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n",
-      "2025-05-03 15:48:47.634 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n",
-      "2025-05-03 15:48:47.635 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n",
-      "2025-05-03 15:48:47.659 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n",
-      "2025-05-03 15:48:47.659 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n"
-     ]
-    }
-   ],
-   "source": [
-    "import streamlit as st\n",
-    "import pandas as pd\n",
-    "import matplotlib.pyplot as plt\n",
-    "import seaborn as sns\n",
-    "from sklearn.ensemble import RandomForestRegressor\n",
-    "from sklearn.model_selection import train_test_split\n",
-    "from sklearn.metrics import mean_squared_error, r2_score\n",
-    "import numpy as np\n",
-    "\n",
-    "# Load dataset\n",
-    "@st.cache_data\n",
-    "def load_data():\n",
-    "    df = pd.read_csv(\"final_air_quality.csv\")  # Change this to your actual file name\n",
-    "    df['Datetime'] = pd.to_datetime(df['Datetime'])\n",
-    "    return df\n",
-    "\n",
-    "final_air_quality = load_data()\n",
-    "\n",
-    "# Sidebar menu\n",
-    "st.sidebar.title(\"Air Quality Analysis App\")\n",
-    "page = st.sidebar.radio(\"Select a Page\", [\"Data Overview\", \"Exploratory Data Analysis (EDA)\", \"Modeling and Prediction\"])\n",
-    "\n",
-    "# 1. Data Overview\n",
-    "if page == \"Data Overview\":\n",
-    "    st.title(\"📊 Data Overview\")\n",
-    "    st.write(\"### First few rows of the dataset:\")\n",
-    "    st.write(final_air_quality.head())\n",
-    "\n",
-    "    st.write(\"### Dataset Info:\")\n",
-    "    st.write(f\"Shape: {final_air_quality.shape}\")\n",
-    "    st.write(\"Column Types:\")\n",
-    "    st.write(final_air_quality.dtypes)\n",
-    "\n",
-    "    st.write(\"### Missing Values:\")\n",
-    "    st.write(final_air_quality.isnull().sum())\n",
-    "\n",
-    "# 2. EDA\n",
-    "elif page == \"Exploratory Data Analysis (EDA)\":\n",
-    "    st.title(\"📈 Exploratory Data Analysis\")\n",
-    "\n",
-    "    st.write(\"#### PM2.5 Distribution Histogram\")\n",
-    "    fig, ax = plt.subplots()\n",
-    "    final_air_quality['PM2.5'].hist(bins=30, ax=ax, color='skyblue')\n",
-    "    st.pyplot(fig)\n",
-    "\n",
-    "    st.write(\"#### Boxplot by Category\")\n",
-    "    fig2, ax2 = plt.subplots()\n",
-    "    sns.boxplot(data=final_air_quality, x='category', y='PM2.5', ax=ax2)\n",
-    "    st.pyplot(fig2)\n",
-    "\n",
-    "    st.write(\"#### Heatmap of Correlation Matrix\")\n",
-    "    corr = final_air_quality.select_dtypes(include=[np.number]).corr()\n",
-    "    fig3, ax3 = plt.subplots(figsize=(10, 6))\n",
-    "    sns.heatmap(corr, annot=True, fmt=\".2f\", cmap=\"coolwarm\", ax=ax3)\n",
-    "    st.pyplot(fig3)\n",
-    "\n",
-    "# 3. Modeling and Prediction\n",
-    "elif page == \"Modeling and Prediction\":\n",
-    "    st.title(\"🤖 Modeling and Prediction\")\n",
-    "\n",
-    "    st.write(\"### Using Random Forest to Predict PM2.5\")\n",
-    "\n",
-    "    # Feature selection\n",
-    "    features = ['PM10', 'SO2', 'NO2', 'CO', 'O3', 'Temp', 'Wspd', 'Rain', 'Dewp', 'Pre']\n",
-    "    target = 'PM2.5'\n",
-    "\n",
-    "    # Drop NA for modeling\n",
-    "    model_df =final_air_quality[features + [target]].dropna()\n",
-    "\n",
-    "    X = model_df[features]\n",
-    "    y = model_df[target]\n",
-    "\n",
-    "    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)\n",
-    "\n",
-    "    rf_model = RandomForestRegressor(n_estimators=100, random_state=42)\n",
-    "    rf_model.fit(X_train, y_train)\n",
-    "    y_pred = rf_model.predict(X_test)\n",
-    "\n",
-    "    rmse = np.sqrt(mean_squared_error(y_test, y_pred))\n",
-    "    r2 = r2_score(y_test, y_pred)\n",
-    "    mse = mean_squared_error(y_test, y_pred)\n",
-    "\n",
-    "    st.write(f\"**Root Mean Squared Error (RMSE):** {rmse:.2f}\")\n",
-    "    st.write(f\"**Mean Squared Error (MSE):** {mse:.2f}\")\n",
-    "    st.write(f\"**R² Score:** {r2:.2f}\")\n",
-    "\n",
-    "    st.write(\"### Feature Importance\")\n",
-    "    importance = pd.Series(rf_model.feature_importances_, index=features).sort_values(ascending=False)\n",
-    "    fig4, ax4 = plt.subplots()\n",
-    "    sns.barplot(x=importance, y=importance.index, palette=\"viridis\", ax=ax4)\n",
-    "    st.pyplot(fig4)\n"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": null,
-   "id": "d396feee-c24d-4cee-b3ae-933ad7a3769c",
-   "metadata": {},
-   "outputs": [],
-   "source": []
-  }
- ],
- "metadata": {
-  "kernelspec": {
-   "display_name": "Python 3 (ipykernel)",
-   "language": "python",
-   "name": "python3"
-  },
-  "language_info": {
-   "codemirror_mode": {
-    "name": "ipython",
-    "version": 3
-   },
-   "file_extension": ".py",
-   "mimetype": "text/x-python",
-   "name": "python",
-   "nbconvert_exporter": "python",
-   "pygments_lexer": "ipython3",
-   "version": "3.11.9"
-  }
- },
- "nbformat": 4,
- "nbformat_minor": 5
-}
+import streamlit as st
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.metrics import mean_squared_error, r2_score
+import numpy as np
+import missingno as msno
+
+# Set up layout
+st.set_page_config(page_title="Air Quality App", layout="wide")
+#df = air_quality_df.copy() 
+
+# Load dataset
+@st.cache_data
+def load_data():
+    return pd.read_csv("final_air_quality.csv")
+    
+air_quality_df = load_data()
+df = air_quality_df.copy()
+
+# Sidebar navigation
+page = st.sidebar.radio("Navigation", ["Home", "Exploratory Data Analysis", "Modeling and Prediction"])
+
+# ----------------------------------------
+# Home Page
+# ----------------------------------------
+if page == "Home":
+    st.title("Air Quality Monitoring Dashboard")
+    st.markdown("Welcome to the **Air Quality Analysis App**")
+    st.markdown("This Streamlit-based web application provides a comprehensive analysis of air quality data helping users to explore pollution trends")
+
+    st.markdown("- Explore China air pollution data (Urban, Suburban, Rural, Industrial)")
+    st.markdown("- Understand pollutant trends over time")
+    st.markdown("- Build predictive models using machine learning")
+
+    st.metric("Total Records", len(air_quality_df))
+    st.metric("Monitoring Sites", air_quality_df['station'].nunique())
+ 
+    st.markdown("**Urban Site : Wanshouxigong**")
+    st.markdown(" Located in central Beijing, this site represents typical urban air quality.Surrounded by dense traffic and residential/commercial zones")
+
+    st.markdown("**Suburban Site : Changping**")
+    st.markdown(" Located in the northern outskirts of Beijing. Considered a suburban area, less dense than the city center but still developed")
+
+    st.markdown("**Rural Site : Huairou**")
+    st.markdown(" Situated in the northern rural region of Beijing. Characterized by lower population density and more natural surroundings")
+    
+    st.markdown("**Industrial Site : Aotizhongxin**")
+    st.markdown(" Known as a hotspot due to its proximity to Olympic venues and high development zones. This site is often monitored closely")
+
+# ----------------------------------------
+# EDA Page
+# ----------------------------------------
+elif page == "Exploratory Data Analysis":
+    st.title(" Exploratory Data Analysis")
+
+    st.subheader("📌 Dataset Description")
+    st.write(df.describe())
+
+    st.subheader("📌 Missing Values")
+    st.write(df.isnull().sum())
+
+    st.subheader("📌 Boxplot: PM2.5 by Day of Week")
+    fig, ax = plt.subplots()
+    sns.boxplot(x='DayOfWeek', y='PM2.5', data=df, ax=ax)
+    st.pyplot(fig)
+        
+    st.subheader("📌 Missing Data in a Heatmap")
+    fig, ax = plt.subplots(figsize=(12, 6))
+    msno.matrix(df, ax=ax)
+    st.pyplot(fig)
+
+    st.subheader("📌 Distribution of Pollutants in a Bar Chart")
+    pollutants = ['PM2.5', 'PM10', 'SO2', 'NO2', 'CO', 'O3']
+    fig, axs = plt.subplots(2, 3, figsize=(16, 10))
+    axs = axs.flatten()
+
+    for i, pollutant in enumerate(pollutants):
+        sns.histplot(df[pollutant], kde=True, bins=30, ax=axs[i])
+        axs[i].set_title(f'Distribution of {pollutant}')
+        axs[i].set_xlabel(pollutant)
+        axs[i].set_ylabel('Frequency')
+    plt.tight_layout()
+    st.pyplot(fig)
+
+    st.subheader("Record Count by Time of Day")
+    plt.figure(figsize=(8, 5))
+    sns.countplot(x='TimeOfDay', data=air_quality_df, order=['Morning', 'Afternoon', 'Evening', 'Night'])
+    plt.title('Record Count by Time of Day')
+    plt.xlabel('Time of Day')
+    plt.ylabel('Count')
+    st.pyplot(plt)
+
+    st.subheader("Record Count: Weekends vs Weekdays")
+    plt.figure(figsize=(6, 4))
+    sns.countplot(x='Weekend', data=air_quality_df, palette='viridis')
+    plt.title('Record Count by Weekend Indicator')
+    plt.xlabel('Weekend (0 = Weekday, 1 = Weekend)')
+    plt.ylabel('Count')
+    st.pyplot(plt)
+
+    st.subheader("Correlation Between PM2.5 and PM10 Levels")
+    fig, ax = plt.subplots(figsize=(10, 6))
+    sns.scatterplot(x='PM2.5', y='PM10', data=air_quality_df, ax=ax)
+    ax.set_xlabel('PM2.5')
+    ax.set_ylabel('PM10')
+    st.pyplot(fig)
+    st.markdown("""This scatter plot helps explore how concentrations of fine particles (PM2.5) relate to those of larger particles (PM10). Understanding this correlation can provide insights into pollution sources and help identify trends in air quality measurements.""")
+
+    st.subheader("Relationship Between PM2.5 and NO2 by Air Quality Across Different Areas")
+    fig, ax = plt.subplots(figsize=(10, 6))
+    sns.scatterplot(x='PM2.5', y='NO2', data=air_quality_df, hue='Category', palette='Set2', ax=ax)
+    ax.set_xlabel('PM2.5')
+    ax.set_ylabel('NO2')
+    st.pyplot(fig)
+    st.markdown("""This scatter plot shows the relationship between **PM2.5** and **NO2** levels, color-coded by station category (Urban, Suburban,Industrial, etc.).Different categories may show varying correlations, providing insights into how traffic, industry, or rural conditions impact pollution patterns.""")
+
+
+# ----------------------------------------
+# Modeling Page
+# ----------------------------------------
+elif page == "Modeling and Prediction":
+    st.title("🤖 Modeling and Prediction")
+
+    df = df.dropna()
+    features = ['Temp', 'Dewp', 'Wspd', 'Rain', 'NO2', 'SO2', 'CO', 'O3']
+    target = 'PM2.5'
+
+    X = df[features]
+    y = df[target]
+
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42) 
+
+    model = RandomForestRegressor(n_estimators=100, random_state=42)
+    model.fit(X_train, y_train)
+    y_pred = model.predict(X_test)
+
+    rmse = np.sqrt(mean_squared_error(y_test, y_pred))
+    r2 = r2_score(y_test, y_pred)
+
+    st.subheader("📈 Model Performance")
+    st.write(f"**Root Mean Squared Error (RMSE):** {rmse:.2f}")
+    st.write(f"**R² Score:** {r2:.2f}")
+
+    st.subheader("📌 Feature Importances")
+    feature_importances = pd.Series(model.feature_importances_, index=features).sort_values(ascending=False)
+    st.bar_chart(feature_importances)
