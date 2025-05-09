@@ -212,12 +212,14 @@ elif page == "Exploratory Data Analysis":
     st.write(df.describe())
 
 ##################################################################################################################################
+
     st.subheader("Missing Values")
     st.markdown("Missing values in a dataset represent data that was not collected, is unavailable, or could not be recorded for certain features. In this air quality dataset, missing values might occur in columns like 'PM2.5', 'SO2', 'TEMP', etc., due to faulty sensors, data transmission issues, or operational constraints. ")
     st.markdown("In the Dataset used here for this analysis, all Missing values were identified and handled to ensure that the dataset maintained integrity for further analysis and machine learning modeling.")
     # Create missing values DataFrame
     missing_df = df.isnull().sum().reset_index()
     missing_df.columns = ['Column', 'Missing Values']
+    
     
     # Build HTML table with colored rows for missing values > 0
     table_html = """
@@ -299,7 +301,8 @@ elif page == "Exploratory Data Analysis":
     st.markdown("Weekdays often see higher pollution due to more traffic, industrial activity, and commuting. ")
     st.markdown("Weekends may have lower emissions due to reduced business operations and travel. ")
     plt.figure(figsize=(6, 4))
-    sns.countplot(x='Weekend', data=air_quality_df, palette='viridis')
+    sns.countplot(x='Weekend', hue='Weekend', data=air_quality_df, palette='viridis', legend=False)
+    #sns.countplot(x='Weekend', data=air_quality_df, palette='viridis')
     plt.title('Record Count by Weekend Indicator')
     plt.xlabel('Weekend (0 = Weekday, 1 = Weekend)')
     plt.ylabel('Count')
@@ -343,7 +346,8 @@ elif page == "Exploratory Data Analysis":
     fig, axs = plt.subplots(2, 3, figsize=(18, 10))
     for i, pollutant in enumerate(pollutants):
         row, col = divmod(i, 3)
-        sns.boxplot(x='Category', y=pollutant, data=air_quality_df, ax=axs[row][col], palette='Set2')
+        #sns.boxplot(x='Category', y=pollutant, data=air_quality_df, ax=axs[row][col], palette='Set2')
+        sns.boxplot(x='Category', y=pollutant, hue='Category', data=air_quality_df, ax=axs[row][col], palette='Set2', legend=False)
         axs[row][col].set_title(f'{pollutant} by Area')
         axs[row][col].set_xlabel('Area')
         axs[row][col].set_ylabel(pollutant)
