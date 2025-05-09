@@ -1,11 +1,11 @@
 import streamlit as st
 import pandas as pd
-from sklearn.model_selection import train_test_split
-from sklearn.ensemble import RandomForestRegressor
-from sklearn.metrics import mean_squared_error, r2_score
-from sklearn.linear_model import LinearRegression
-import numpy as np
-import missingno as msno
+#from sklearn.model_selection import train_test_split
+#from sklearn.ensemble import RandomForestRegressor
+#from sklearn.metrics import mean_squared_error, r2_score
+#from sklearn.linear_model import LinearRegression
+#import numpy as np
+#import missingno as msno
 import base64
 import time
 
