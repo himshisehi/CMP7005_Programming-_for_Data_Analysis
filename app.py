@@ -16,7 +16,7 @@ st.set_page_config(page_title="AirMatters App", layout="wide")
 
 ###################################################################################################
 
-# Function to set background image from a local file
+# Set background and sidebar styles
 def set_bg_and_sidebar(image_file):
     with open(image_file, "rb") as f:
         data = f.read()
@@ -29,53 +29,45 @@ def set_bg_and_sidebar(image_file):
             height: 100%;
             margin: 0;
             padding: 0;
-            color: white !important;
+            color: white;
             background-image: url("data:image/jpg;base64,{encoded}");
             background-size: cover;
             background-position: top center;
             background-repeat: no-repeat;
             background-attachment: fixed;
-        }}     
+        }}
 
-        /* Sidebar */
+        /* Sidebar background */
         section[data-testid="stSidebar"] {{
-            background-color: #b5630b !important;
+            background-color: rgba(247, 244, 246, 0.11);
             padding-top: 20px;
             padding-left: 15px;
             padding-right: 15px;
-            color: black !important; /* optional: keep sidebar text dark for readability */
         }}
 
-        /* Radio labels in sidebar */
-        .st-emotion-cache-1v3fvcr,
-        .st-emotion-cache-16txtl3 {{
-            color: black !important; /* ensures sidebar nav is readable */
-        }}
-
-        /* Metric boxes */
-        div[data-testid="metric-container"] {{
-            background-color: rgba(255, 255, 255, 0.15);
-            border-radius: 10px;
-            padding: 10px;
+        /* Sidebar title */
+        section[data-testid="stSidebar"] h1,
+        section[data-testid="stSidebar"] h2,
+        section[data-testid="stSidebar"] h3 {{
             color: white !important;
-        }}
-
-        /* Title */
-        h1 {{
-            text-align: left;
-            color: white !important;
-            font-size: 3em;
             text-shadow: 2px 2px 4px #000000;
         }}
-         
+
+        /* Sidebar radio labels (navigation items) */
+        .st-emotion-cache-1v3fvcr label, .st-emotion-cache-16txtl3 label {{
+            font-size: 5em !important;
+            color: white !important;
+            text-shadow: 2px 2px 4px #000000;
+            text-align: left;
+        }}
         </style>
         """,
         unsafe_allow_html=True
     )
 
+# Apply styling
+set_bg_and_sidebar("AirPollution1.jpg")  # Replace with your background image file path
 
-# Apply the custom styling
-set_bg_and_sidebar("AirPollution3.jpg")
 ##############################################################################################################################################
 
 
@@ -90,8 +82,6 @@ df = air_quality_df.copy()
 # Sidebar navigation
 st.sidebar.title("Navigation")
 page = st.sidebar.radio("Go to", ["Home", "Exploratory Data Analysis", "Modeling and Prediction"])
-
-
 
 # ----------------------------------------
 # Home Page
@@ -109,7 +99,7 @@ if page == "Home":
 )
     st.markdown("This Streamlit-based web application provides a comprehensive analysis of air quality data helping users to explore pollution trends")
    # Display the homepage image properly
-    st.image("image.jpg", use_container_width=True)
+    st.image("AirPollution2.jpg", use_container_width=True)
     st.markdown("- Explore China air pollution data (Urban, Suburban, Rural, Industrial)")
     st.markdown("- Understand pollutant trends over time")
     st.markdown("- Build predictive models using machine learning")
