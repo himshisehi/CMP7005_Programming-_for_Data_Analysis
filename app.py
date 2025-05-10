@@ -98,7 +98,7 @@ if page == "Home":
 )
     st.markdown("This Streamlit-based web application provides a comprehensive analysis of air quality data helping users to explore pollution trends")
    # Display the homepage image properly
-    st.image("AirPollution2.jpg", use_container_width=True) ----> Removing these beacuse of App loading issues
+    #st.image("AirPollution2.jpg", use_container_width=True) ----> Removing these beacuse of App loading issues
     st.markdown("- Explore China air pollution data (Urban, Suburban, Rural, Industrial)")
     st.markdown("- Understand pollutant trends over time")
     st.markdown("- Build predictive models using machine learning")
