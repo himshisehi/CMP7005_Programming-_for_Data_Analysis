@@ -256,28 +256,28 @@ elif page == "Exploratory Data Analysis":
     st.markdown(table_html, unsafe_allow_html=True)
 
 ######################################################################################################################################
-    st.subheader("Distribution of Pollutants in a Bar Chart")
-    st.markdown("This bar charts show the distribution of pollutants to explore how different pollutant levels dominate and how their levels differ. This helps to prioritize which pollutants to monitor or control and to identify how to locate resources for air quality improvement.")
-    pollutants = ['PM2.5', 'PM10', 'SO2', 'NO2', 'CO', 'O3']
-    fig, axs = plt.subplots(2, 3, figsize=(16, 10))
-    axs = axs.flatten()
+    #st.subheader("Distribution of Pollutants in a Bar Chart")
+    #st.markdown("This bar charts show the distribution of pollutants to explore how different pollutant levels dominate and how their levels differ. This helps to prioritize which pollutants to monitor or control and to identify how to locate resources for air quality improvement.")
+    #pollutants = ['PM2.5', 'PM10', 'SO2', 'NO2', 'CO', 'O3']
+    #fig, axs = plt.subplots(2, 3, figsize=(16, 10))
+    #axs = axs.flatten()
 
-    for i, pollutant in enumerate(pollutants):
-        sns.histplot(df[pollutant], kde=True, bins=30, ax=axs[i])
-        axs[i].set_title(f'Distribution of {pollutant}')
-        axs[i].set_xlabel(pollutant)
-        axs[i].set_ylabel('Frequency')
-    plt.tight_layout()
-    st.pyplot(fig)
+    #for i, pollutant in enumerate(pollutants):
+        #sns.histplot(df[pollutant], kde=True, bins=30, ax=axs[i])
+        #axs[i].set_title(f'Distribution of {pollutant}')
+        #axs[i].set_xlabel(pollutant)
+        #axs[i].set_ylabel('Frequency')
+    #plt.tight_layout()-------> Removing beacuse of App loading issues
+    #st.pyplot(fig)
     
 ####################################################################################################################################
-    #st.subheader("Record Count by Time of Day")
-    #fig, ax = plt.subplots(figsize=(10, 6))  # Adjust width and height here
-    #sns.countplot(x='TimeOfDay', data=air_quality_df, order=['Morning', 'Afternoon', 'Evening', 'Night'], ax=ax)
-    #ax.set_title('Record Count by Time of Day', fontsize=8)
-    #ax.set_xlabel('Time of Day', fontsize=8)
-    #ax.set_ylabel('Count')
-    #st.pyplot(fig)   -------> Removing beacuse of App loading issues
+    st.subheader("Record Count by Time of Day")
+    fig, ax = plt.subplots(figsize=(10, 6))  # Adjust width and height here
+    sns.countplot(x='TimeOfDay', data=air_quality_df, order=['Morning', 'Afternoon', 'Evening', 'Night'], ax=ax)
+    ax.set_title('Record Count by Time of Day', fontsize=8)
+    ax.set_xlabel('Time of Day', fontsize=8)
+    ax.set_ylabel('Count')
+    st.pyplot(fig)   
 ##################################################################################################################################
     
     st.subheader("Average Pollutant Levels on Weekdays vs Weekends")
@@ -297,45 +297,45 @@ elif page == "Exploratory Data Analysis":
     st.pyplot(fig)
     
 #######################################################################################################################################
-    #st.subheader("Record Count: Weekends vs Weekdays")
-    #st.markdown("Weekdays often see higher pollution due to more traffic, industrial activity, and commuting. ")
-    #st.markdown("Weekends may have lower emissions due to reduced business operations and travel. ")
-    #plt.figure(figsize=(6, 4))
-    #sns.countplot(x='Weekend', hue='Weekend', data=air_quality_df, palette='viridis', legend=False)
+    st.subheader("Record Count: Weekends vs Weekdays")
+    st.markdown("Weekdays often see higher pollution due to more traffic, industrial activity, and commuting. ")
+    st.markdown("Weekends may have lower emissions due to reduced business operations and travel. ")
+    plt.figure(figsize=(6, 4))
+    sns.countplot(x='Weekend', hue='Weekend', data=air_quality_df, palette='viridis', legend=False)
     #sns.countplot(x='Weekend', data=air_quality_df, palette='viridis')
-    #plt.title('Record Count by Weekend Indicator')
-    #plt.xlabel('Weekend (0 = Weekday, 1 = Weekend)')
-   # plt.ylabel('Count')
-    #st.pyplot(plt)-------> Removing beacuse of App loading issues
+    plt.title('Record Count by Weekend Indicator')
+    plt.xlabel('Weekend (0 = Weekday, 1 = Weekend)')
+    plt.ylabel('Count')
+    st.pyplot(plt)
 
 #######################################################################################################################################
     
-    st.subheader("Scatter Plot Grid of Key Air Pollutants")
-    st.markdown("The below scatter plots helps visualize correlations (positive, negative, or no correlation) between pairs of pollutants.This allows side-by-side comparison of relationships between multiple pollutants in one view which helps spot patterns that may not be obvious from individual plots.")
-    pollutants = ['PM2.5', 'PM10', 'SO2', 'NO2', 'CO', 'O3']
+    #st.subheader("Scatter Plot Grid of Key Air Pollutants")
+    #st.markdown("The below scatter plots helps visualize correlations (positive, negative, or no correlation) between pairs of pollutants.This allows side-by-side comparison of relationships between multiple pollutants in one view which helps spot patterns that may not be obvious from individual plots.")
+    #pollutants = ['PM2.5', 'PM10', 'SO2', 'NO2', 'CO', 'O3']
     # Set up figure
-    fig, axes = plt.subplots(nrows=5, ncols=3, figsize=(20, 25))
-    axes = axes.flatten()
-    plot_num = 0
+    #fig, axes = plt.subplots(nrows=5, ncols=3, figsize=(20, 25))
+    #axes = axes.flatten()
+    #plot_num = 0
 
     # Plot each unique pair
-    for i in range(len(pollutants)):
-        for j in range(i + 1, len(pollutants)):
-            sns.scatterplot(
-                x=air_quality_df[pollutants[i]],
-                y=air_quality_df[pollutants[j]],
-                ax=axes[plot_num],
-                alpha=0.5
-            )
-            axes[plot_num].set_title(f'{pollutants[i]} vs {pollutants[j]}')
-            axes[plot_num].set_xlabel(pollutants[i])
-            axes[plot_num].set_ylabel(pollutants[j])
-            plot_num += 1
+    #for i in range(len(pollutants)):
+        #for j in range(i + 1, len(pollutants)):
+            #sns.scatterplot(
+                #x=air_quality_df[pollutants[i]],
+                #y=air_quality_df[pollutants[j]],
+                #ax=axes[plot_num],
+                #alpha=0.5
+            #)
+            #axes[plot_num].set_title(f'{pollutants[i]} vs {pollutants[j]}')
+            #axes[plot_num].set_xlabel(pollutants[i])
+            #axes[plot_num].set_ylabel(pollutants[j])
+           # plot_num += 1
     # Hide unused subplots
-    for k in range(plot_num, len(axes)):
-        fig.delaxes(axes[k])
-    plt.tight_layout()
-    st.pyplot(fig)
+    #for k in range(plot_num, len(axes)):
+        #fig.delaxes(axes[k])
+    #plt.tight_layout()
+    #st.pyplot(fig)-------> Removing beacuse of App loading issues
     
 ########################################################################################################################################
 
@@ -392,38 +392,38 @@ elif page == "Exploratory Data Analysis":
 
 #####################################################################################################################################
     
-    st.subheader("Temperature vs Pollutant Levels")
-    st.markdown("These plots help to visually assess Temperature changes over time (e.g., summer vs winter). Some pollutants behave differently in different weather.Unusually high pollutant values at certain temperatures may stand out as anomalies")
-    pollutants = ['PM2.5', 'PM10', 'SO2', 'NO2', 'CO', 'O3']
+    #st.subheader("Temperature vs Pollutant Levels")
+    #st.markdown("These plots help to visually assess Temperature changes over time (e.g., summer vs winter). Some pollutants behave differently in different weather.Unusually high pollutant values at certain temperatures may stand out as anomalies")
+    #pollutants = ['PM2.5', 'PM10', 'SO2', 'NO2', 'CO', 'O3']
    # Create 2x3 subplots
-    fig, axs = plt.subplots(2, 3, figsize=(18, 10))
-    axs = axs.flatten()  
-    for i, pollutant in enumerate(pollutants):
-        sns.scatterplot(x='TEMP', y=pollutant, data=air_quality_df, alpha=0.3, ax=axs[i])
-        axs[i].set_title(f'Temperature vs {pollutant}')
-        axs[i].set_xlabel('Temperature (°C)')
-        axs[i].set_ylabel(f'{pollutant} (µg/m³)')
-        axs[i].grid(True)    
-    plt.tight_layout()
-    st.pyplot(fig)
+    #fig, axs = plt.subplots(2, 3, figsize=(18, 10))
+    #axs = axs.flatten()  
+   # for i, pollutant in enumerate(pollutants):
+        #sns.scatterplot(x='TEMP', y=pollutant, data=air_quality_df, alpha=0.3, ax=axs[i])
+        #axs[i].set_title(f'Temperature vs {pollutant}')
+        #axs[i].set_xlabel('Temperature (°C)')
+        #axs[i].set_ylabel(f'{pollutant} (µg/m³)')
+        #axs[i].grid(True)    
+    #plt.tight_layout()
+    #st.pyplot(fig)-------> Removing beacuse of App loading issues
 
 ##################################################################################################################################
     
-    st.subheader("Scatter Plots: Wind Speed vs Pollutants")
-    st.markdown("These plots helps to visually explore how wind speed influence the concentration levels of different pollutants. Correlation values gives a quantitative sense of how strongly wind speed is associated with changes in pollutant levels. A negative correlation may indicate that higher wind speed disperses pollutants.")
-    pollutants = ['PM2.5', 'PM10', 'SO2', 'NO2', 'CO', 'O3']
+    #st.subheader("Scatter Plots: Wind Speed vs Pollutants")
+    #st.markdown("These plots helps to visually explore how wind speed influence the concentration levels of different pollutants. Correlation values gives a quantitative sense of how strongly wind speed is associated with changes in pollutant levels. A negative correlation may indicate that higher wind speed disperses pollutants.")
+   # pollutants = ['PM2.5', 'PM10', 'SO2', 'NO2', 'CO', 'O3']
    # Create 2x3 subplots
-    fig, axs = plt.subplots(2, 3, figsize=(18, 10))
-    axs = axs.flatten()  
-    for i, pollutant in enumerate(pollutants):
-        correlation = air_quality_df['WSPM'].corr(air_quality_df[pollutant])
-        sns.scatterplot(x='WSPM', y=pollutant, data=air_quality_df, alpha=0.3, color='green', ax=axs[i])
-        axs[i].set_title(f'WSPM vs {pollutant}\nCorrelation = {correlation:.2f}', fontsize=11)
-        axs[i].set_xlabel('Wind Speed (m/s)')
-        axs[i].set_ylabel(f'{pollutant} (µg/m³)')
-        axs[i].grid(True)   
-    plt.tight_layout()
-    st.pyplot(fig)
+    #fig, axs = plt.subplots(2, 3, figsize=(18, 10))
+    #axs = axs.flatten()  
+    #for i, pollutant in enumerate(pollutants):
+        #correlation = air_quality_df['WSPM'].corr(air_quality_df[pollutant])
+        #sns.scatterplot(x='WSPM', y=pollutant, data=air_quality_df, alpha=0.3, color='green', ax=axs[i])
+        #axs[i].set_title(f'WSPM vs {pollutant}\nCorrelation = {correlation:.2f}', fontsize=11)
+        #axs[i].set_xlabel('Wind Speed (m/s)')
+        #axs[i].set_ylabel(f'{pollutant} (µg/m³)')
+        #axs[i].grid(True)   
+    #plt.tight_layout()
+    #st.pyplot(fig)-------> Removing beacuse of App loading issues
 # ----------------------------------------
 # Modeling Page
 # ----------------------------------------
@@ -521,52 +521,52 @@ ax.grid(True)
 st.pyplot(fig)
 
 # Feature Importance Plot for Linear Regression (using absolute coefficient values)
-st.markdown("### Feature Importance - Linear Regression")
-coefficients = pd.DataFrame({
-    'Feature': features,
-    'Coefficient': lr_model.coef_,
-    'Importance': np.abs(lr_model.coef_)
-}).sort_values(by='Importance', ascending=False)
+#st.markdown("### Feature Importance - Linear Regression")
+#coefficients = pd.DataFrame({
+   # 'Feature': features,
+   # 'Coefficient': lr_model.coef_,
+   # 'Importance': np.abs(lr_model.coef_)
+#}).sort_values(by='Importance', ascending=False)
 
-fig_lr, ax_lr = plt.subplots(figsize=(8, 5))
-sns.barplot(data=coefficients, x='Importance', y='Feature', hue='Feature', palette='Greens_d', ax=ax_lr, legend=False)
-ax_lr.set_title('Feature Importance - Linear Regression')
-ax_lr.set_xlabel('Absolute Coefficient Value')
-ax_lr.set_ylabel('Features')
-ax_lr.grid(True)
-st.pyplot(fig_lr)
+#fig_lr, ax_lr = plt.subplots(figsize=(8, 5))
+#sns.barplot(data=coefficients, x='Importance', y='Feature', hue='Feature', palette='Greens_d', ax=ax_lr, legend=False)
+#ax_lr.set_title('Feature Importance - Linear Regression')
+#ax_lr.set_xlabel('Absolute Coefficient Value')
+#ax_lr.set_ylabel('Features')
+#ax_lr.grid(True)
+#st.pyplot(fig_lr)
 
-st.markdown("### Actual vs Predicted PM2.5")
-st.markdown("""
-    <style>
-    .streamlit-expanderHeader {
-        color: #FFFFFF 
-    }
-    .css-1l5x3x6 {
-        color: #FFFFFF 
-    }
-    </style>
-""", unsafe_allow_html=True)
+#st.markdown("### Actual vs Predicted PM2.5")
+#st.markdown("""
+   # <style>
+    #.streamlit-expanderHeader {
+    #    color: #FFFFFF 
+    #}
+   # .css-1l5x3x6 {
+   #     color: #FFFFFF 
+ #   }
+  #  </style>
+#""", unsafe_allow_html=True)
 
-tab1, tab2 = st.tabs(["Linear Regression", "Random Forest"])
+#tab1, tab2 = st.tabs(["Linear Regression", "Random Forest"])
 
-with tab1:
-    fig1, ax1 = plt.subplots()
-    ax1.scatter(y_test, y_pred_lr, alpha=0.5, color="green")
-    ax1.plot([y.min(), y.max()], [y.min(), y.max()], '--r')
-    ax1.set_xlabel("Actual PM2.5")
-    ax1.set_ylabel("Predicted PM2.5")
-    ax1.set_title("Linear Regression")
-    st.pyplot(fig1)
+#with tab1:
+#    fig1, ax1 = plt.subplots()
+#    ax1.scatter(y_test, y_pred_lr, alpha=0.5, color="green")
+#    ax1.plot([y.min(), y.max()], [y.min(), y.max()], '--r')
+ #   ax1.set_xlabel("Actual PM2.5")
+#    ax1.set_ylabel("Predicted PM2.5")
+#    ax1.set_title("Linear Regression")
+ #   st.pyplot(fig1)
 
-with tab2:
-    fig2, ax2 = plt.subplots()
-    ax2.scatter(y_test, y_pred_rf, alpha=0.5, color="blue")
-    ax2.plot([y.min(), y.max()], [y.min(), y.max()], '--r')
-    ax2.set_xlabel("Actual PM2.5")
-    ax2.set_ylabel("Predicted PM2.5")
-    ax2.set_title("Random Forest")
-    st.pyplot(fig2)
+#with tab2:
+#    fig2, ax2 = plt.subplots()
+#    ax2.scatter(y_test, y_pred_rf, alpha=0.5, color="blue")
+#    ax2.plot([y.min(), y.max()], [y.min(), y.max()], '--r')
+#    ax2.set_xlabel("Actual PM2.5")
+#    ax2.set_ylabel("Predicted PM2.5")
+#    ax2.set_title("Random Forest")
+#    st.pyplot(fig2)
 
 
 
