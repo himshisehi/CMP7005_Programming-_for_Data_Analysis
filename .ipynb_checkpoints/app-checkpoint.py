@@ -98,7 +98,7 @@ if page == "Home":
 )
     st.markdown("This Streamlit-based web application provides a comprehensive analysis of air quality data helping users to explore pollution trends")
    # Display the homepage image properly
-    st.image("AirPollution2.jpg", use_container_width=True)
+    #st.image("AirPollution2.jpg", use_container_width=True) ----> Removing these beacuse of App loading issues
     st.markdown("- Explore China air pollution data (Urban, Suburban, Rural, Industrial)")
     st.markdown("- Understand pollutant trends over time")
     st.markdown("- Build predictive models using machine learning")
@@ -271,13 +271,13 @@ elif page == "Exploratory Data Analysis":
     st.pyplot(fig)
     
 ####################################################################################################################################
-    st.subheader("Record Count by Time of Day")
-    fig, ax = plt.subplots(figsize=(10, 6))  # Adjust width and height here
-    sns.countplot(x='TimeOfDay', data=air_quality_df, order=['Morning', 'Afternoon', 'Evening', 'Night'], ax=ax)
-    ax.set_title('Record Count by Time of Day', fontsize=8)
-    ax.set_xlabel('Time of Day', fontsize=8)
-    ax.set_ylabel('Count')
-    st.pyplot(fig)
+    #st.subheader("Record Count by Time of Day")
+    #fig, ax = plt.subplots(figsize=(10, 6))  # Adjust width and height here
+    #sns.countplot(x='TimeOfDay', data=air_quality_df, order=['Morning', 'Afternoon', 'Evening', 'Night'], ax=ax)
+    #ax.set_title('Record Count by Time of Day', fontsize=8)
+    #ax.set_xlabel('Time of Day', fontsize=8)
+    #ax.set_ylabel('Count')
+    #st.pyplot(fig)   -------> Removing beacuse of App loading issues
 ##################################################################################################################################
     
     st.subheader("Average Pollutant Levels on Weekdays vs Weekends")
@@ -297,16 +297,16 @@ elif page == "Exploratory Data Analysis":
     st.pyplot(fig)
     
 #######################################################################################################################################
-    st.subheader("Record Count: Weekends vs Weekdays")
-    st.markdown("Weekdays often see higher pollution due to more traffic, industrial activity, and commuting. ")
-    st.markdown("Weekends may have lower emissions due to reduced business operations and travel. ")
-    plt.figure(figsize=(6, 4))
-    sns.countplot(x='Weekend', hue='Weekend', data=air_quality_df, palette='viridis', legend=False)
+    #st.subheader("Record Count: Weekends vs Weekdays")
+    #st.markdown("Weekdays often see higher pollution due to more traffic, industrial activity, and commuting. ")
+    #st.markdown("Weekends may have lower emissions due to reduced business operations and travel. ")
+    #plt.figure(figsize=(6, 4))
+    #sns.countplot(x='Weekend', hue='Weekend', data=air_quality_df, palette='viridis', legend=False)
     #sns.countplot(x='Weekend', data=air_quality_df, palette='viridis')
-    plt.title('Record Count by Weekend Indicator')
-    plt.xlabel('Weekend (0 = Weekday, 1 = Weekend)')
-    plt.ylabel('Count')
-    st.pyplot(plt)
+    #plt.title('Record Count by Weekend Indicator')
+    #plt.xlabel('Weekend (0 = Weekday, 1 = Weekend)')
+   # plt.ylabel('Count')
+    #st.pyplot(plt)-------> Removing beacuse of App loading issues
 
 #######################################################################################################################################
     
@@ -336,25 +336,26 @@ elif page == "Exploratory Data Analysis":
         fig.delaxes(axes[k])
     plt.tight_layout()
     st.pyplot(fig)
+    
 ########################################################################################################################################
 
-    pollutants = ['PM2.5', 'PM10', 'SO2', 'NO2', 'CO', 'O3']
-    sns.set(style="whitegrid")
-    st.subheader("Distribution of Each Pollutant Across Areas")
-    st.markdown("""This section presents boxplots for each air pollutant to compare their concentration levels across different areas. This helps to understand **Median values** of pollutants. **Spread or variability** of data within each area.**Outliers** unusually high or low readings and **Comparative pollution levels** between different areas. """)
+    #pollutants = ['PM2.5', 'PM10', 'SO2', 'NO2', 'CO', 'O3']
+    #sns.set(style="whitegrid")
+    #st.subheader("Distribution of Each Pollutant Across Areas")
+    #st.markdown("""This section presents boxplots for each air pollutant to compare their concentration levels across different areas. This helps to understand **Median values** of pollutants. **Spread or variability** of data within each area.**Outliers** unusually high or low readings and **Comparative pollution levels** between different areas. """)
 
-    fig, axs = plt.subplots(2, 3, figsize=(18, 10))
-    for i, pollutant in enumerate(pollutants):
-        row, col = divmod(i, 3)
+   # fig, axs = plt.subplots(2, 3, figsize=(18, 10))
+   # for i, pollutant in enumerate(pollutants):
+     #   row, col = divmod(i, 3)
         #sns.boxplot(x='Category', y=pollutant, data=air_quality_df, ax=axs[row][col], palette='Set2')
-        sns.boxplot(x='Category', y=pollutant, hue='Category', data=air_quality_df, ax=axs[row][col], palette='Set2', legend=False)
-        axs[row][col].set_title(f'{pollutant} by Area')
-        axs[row][col].set_xlabel('Area')
-        axs[row][col].set_ylabel(pollutant)
-    plt.tight_layout()
-    st.pyplot(fig)
+        #sns.boxplot(x='Category', y=pollutant, hue='Category', data=air_quality_df, ax=axs[row][col], palette='Set2', legend=False)
+        #axs[row][col].set_title(f'{pollutant} by Area')
+        #axs[row][col].set_xlabel('Area')
+        #axs[row][col].set_ylabel(pollutant)
+   # plt.tight_layout()
+   # st.pyplot(fig) -------> Removing beacuse of App loading issues
 
-##########################################################################################################################################
+########################################################################################################################################## 
     
     st.subheader("Correlation Heatmap of Pollutants")
     st.markdown("This heatmap shows how strongly each pair of pollutants is related to one another, based on their Pearson correlation coefficient (values between -1 and 1)")
@@ -369,25 +370,25 @@ elif page == "Exploratory Data Analysis":
   
 ####################################################################################################################################
     
-    st.subheader("Daily Average Pollutant Levels Over Time")
-    air_quality_df['Datetime'] = pd.to_datetime(air_quality_df['Datetime'])
-    air_quality_df.set_index('Datetime', inplace=True)
-    st.markdown("This graph will help to observe trends, seasonality, or spikes in pollutant levels over time.Especially useful for identifying long-term pollution patterns or days with unusual spikes.")
+    #st.subheader("Daily Average Pollutant Levels Over Time")
+    #air_quality_df['Datetime'] = pd.to_datetime(air_quality_df['Datetime'])
+    #air_quality_df.set_index('Datetime', inplace=True)
+    #st.markdown("This graph will help to observe trends, seasonality, or spikes in pollutant levels over time.Especially useful for identifying long-term pollution patterns or days with unusual spikes.")
 
-    pollutants = ['PM2.5', 'PM10', 'SO2', 'NO2', 'CO', 'O3']
+    #pollutants = ['PM2.5', 'PM10', 'SO2', 'NO2', 'CO', 'O3']
   # Set up 2x3 grid of subplots
-    fig, axs = plt.subplots(2, 3, figsize=(18, 10))
-    axs = axs.flatten()  # Flatten the 2D array of axes to iterate easily
-    for i, pollutant in enumerate(pollutants):
-        daily_avg = air_quality_df[pollutant].resample('D').mean()
-        axs[i].plot(daily_avg, color='darkgreen')
-        axs[i].set_title(f'{pollutant} Over Time', fontsize=12)
-        axs[i].set_xlabel('Date')
-        axs[i].set_ylabel(f'{pollutant} Level')
-        axs[i].tick_params(axis='x', labelrotation=45)
-        axs[i].grid(True)    
-    plt.tight_layout()
-    st.pyplot(fig)
+    #fig, axs = plt.subplots(2, 3, figsize=(18, 10))
+    #axs = axs.flatten()  # Flatten the 2D array of axes to iterate easily
+    #for i, pollutant in enumerate(pollutants):
+        #daily_avg = air_quality_df[pollutant].resample('D').mean()
+        #axs[i].plot(daily_avg, color='darkgreen')
+        #axs[i].set_title(f'{pollutant} Over Time', fontsize=12)
+        #axs[i].set_xlabel('Date')
+        #axs[i].set_ylabel(f'{pollutant} Level')
+        #axs[i].tick_params(axis='x', labelrotation=45)
+        #axs[i].grid(True)    
+    #plt.tight_layout()
+    #st.pyplot(fig) -------> Removing beacuse of App loading issues
 
 #####################################################################################################################################
     
@@ -512,7 +513,7 @@ feature_importance = pd.DataFrame({
 }).sort_values(by='Importance', ascending=False)
 
 fig, ax = plt.subplots(figsize=(8, 5))
-sns.barplot(data=feature_importance, x='Importance', y='Feature', palette='Blues_d', ax=ax)
+sns.barplot(data=feature_importance, x='Importance', y='Feature', hue='Feature', palette='Blues_d', ax=ax, legend=False)
 ax.set_title('Feature Importance - Random Forest')
 ax.set_xlabel('Importance')
 ax.set_ylabel('Features')
@@ -528,7 +529,7 @@ coefficients = pd.DataFrame({
 }).sort_values(by='Importance', ascending=False)
 
 fig_lr, ax_lr = plt.subplots(figsize=(8, 5))
-sns.barplot(data=coefficients, x='Importance', y='Feature', palette='Greens_d', ax=ax_lr)
+sns.barplot(data=coefficients, x='Importance', y='Feature', hue='Feature', palette='Greens_d', ax=ax_lr, legend=False)
 ax_lr.set_title('Feature Importance - Linear Regression')
 ax_lr.set_xlabel('Absolute Coefficient Value')
 ax_lr.set_ylabel('Features')
